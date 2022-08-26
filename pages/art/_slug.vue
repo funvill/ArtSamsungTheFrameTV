@@ -4,24 +4,27 @@
     <tags :tags="art.tags" />
     <div class="actions">
       <a :href="require(`~/assets/images/${art.img}`)" download
-        ><div class="btn btn-primary">Download</div></a
+        ><div class="btn btn-primary">Download 💾</div></a
       >
     </div>
     <a :href="require(`~/assets/images/${art.img}`)" download
       ><img :src="require(`~/assets/images/${art.img}`)" :alt="art.alt"
     /></a>
 
-    <strong>Resolution:</strong> <NuxtLink to='/about#why-are-the-images-all-the-resolution-of-38402160-169-ish'>3840×2160</NuxtLink>, <strong>Mid Journey prompt:</strong> {{art.prompt}}
+    <strong>Resolution:</strong>
+    <NuxtLink
+      to="/about#why-are-the-images-all-the-resolution-of-38402160-169-ish"
+      >3840×2160</NuxtLink
+    >, <strong>Mid Journey prompt:</strong> {{ art.prompt }} <br />
+    <NuxtLink to="/about#how-to-load-artwork-onto-the-samsung-the-frame-tv"
+      >How to load artwork onto the Samsung 'The Frame' TV</NuxtLink
+    >
   </article>
 </template>
 
 <style scoped>
 .actions {
   text-align: center;
-}
-.art {
-  max-width: 960px;
-  margin: auto;
 }
 .art img {
   max-width: 100%;

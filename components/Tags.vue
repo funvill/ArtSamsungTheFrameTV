@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span v-for="TagSlug in cleanTags(tags)" >
+    <span v-for="TagSlug in cleanTags(tags)" :key="TagSlug" >
       <NuxtLink :to="{ path: `/tag/${TagSlug}` }">#{{ TagSlug }}</NuxtLink>, 
     </span>
   </div>
@@ -19,7 +19,6 @@ export default {
           }
         });
       }
-      console.log("output: ", output);
       return output;
     },
   },

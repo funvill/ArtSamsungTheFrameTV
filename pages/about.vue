@@ -4,9 +4,6 @@
   </article>
 </template>
 
-<style scoped>
-</style>
-
 <script>
 export default {
   async asyncData({ $content, params }) {
