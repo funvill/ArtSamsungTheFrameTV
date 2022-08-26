@@ -1,11 +1,7 @@
 <template>
   <article class="tag">
     <h2>Tag Index</h2>
-    <ul>
-      <li v-for="tag in tags" v-bind:key="tags">
-        <a :href="'./tag/' + tag">#{{ tag }}</a>
-      </li>
-    </ul>
+    <tags :tags="tags"></tags>
   </article>
 </template>
 
@@ -37,7 +33,7 @@ export default {
     });
 
     return {
-      tags: allTagsAsArray,
+      tags: allTagsAsArray.join(","),
     };
   },
 };

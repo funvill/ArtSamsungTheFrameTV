@@ -1,21 +1,25 @@
 <template>
-  <div><span v-html="MakeTagsIntoLinks(tags)"></span></div>
+  <div>
+    <span v-for="TagSlug in cleanTags(tags)" >
+      <NuxtLink :to="{ path: `/tag/${TagSlug}` }">#{{ TagSlug }}</NuxtLink>, 
+    </span>
+  </div>
 </template>
 
 <script>
 export default {
   methods: {
-    MakeTagsIntoLinks(tags) {
-      let output = "";
+    cleanTags(tags) {
+      let output = [];
       if (typeof tags === "string") {
         let tagArray = tags.split(",");
         tagArray.forEach((tag) => {
           if (tag.length > 0) {
-            output +=
-              "<a href='./tag/" + tag.trim() + "'>#" + tag.trim() + "</a>, ";
+            output.push(tag.trim());
           }
         });
       }
+      console.log("output: ", output);
       return output;
     },
   },
