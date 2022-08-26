@@ -11,7 +11,7 @@
       ><img :src="require(`~/assets/images/${art.img}`)" :alt="art.alt"
     /></a>
 
-    <strong>Resolution:</strong> <a href='/about#why-are-the-images-all-the-resolution-of-38402160-169-ish'>3840×2160</a>, <strong>Mid Journey prompt:</strong> {{art.prompt}}
+    <strong>Resolution:</strong> <NuxtLink to='/about#why-are-the-images-all-the-resolution-of-38402160-169-ish'>3840×2160</NuxtLink>, <strong>Mid Journey prompt:</strong> {{art.prompt}}
   </article>
 </template>
 

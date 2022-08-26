@@ -12,7 +12,7 @@ export default {
         tagArray.forEach((tag) => {
           if (tag.length > 0) {
             output +=
-              "<a href='/tag/" + tag.trim() + "'>#" + tag.trim() + "</a>, ";
+              "<a href='./tag/" + tag.trim() + "'>#" + tag.trim() + "</a>, ";
           }
         });
       }

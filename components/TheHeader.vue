@@ -1,9 +1,10 @@
 <template>
   <div class="header">
     <h1>Art for Samsung 'The Frame' TV</h1>
-    <p>Free<a href='/about#what-licence-are-these-images'>-ish</a> art for your <a href='https://www.samsung.com/ca/lifestyle-tvs/the-frame/'>Samsung 'The Frame' TV</a>.</p>
-    <a href="/art">Art Index</a> | <a href="/tag">Tag Index</a> |
-    <a href="/about">About</a>
+    
+    <p>Free<NuxtLink to="/about#what-licence-are-these-images">-ish</NuxtLink> art for your <a href='https://www.samsung.com/ca/lifestyle-tvs/the-frame/'>Samsung 'The Frame' TV</a>.</p>
+    <NuxtLink to="/art">Art Index</NuxtLink> | <NuxtLink to="/tag">Tag Index</NuxtLink> |
+    <NuxtLink to="/about">About</NuxtLink>
     <hr />
   </div>
 </template>

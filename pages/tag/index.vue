@@ -3,7 +3,7 @@
     <h2>Tag Index</h2>
     <ul>
       <li v-for="tag in tags" v-bind:key="tags">
-        <a :href="'/tag/' + tag">#{{ tag }}</a>
+        <a :href="'./tag/' + tag">#{{ tag }}</a>
       </li>
     </ul>
   </article>
