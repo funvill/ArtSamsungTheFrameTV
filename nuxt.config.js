@@ -37,6 +37,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     // "@nuxtjs/eslint-module",
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -45,6 +46,7 @@ export default {
     "bootstrap-vue/nuxt",
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
+    '@nuxt/image',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -52,4 +54,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // https://image.nuxtjs.org/api/options
+  image: {
+    // Options
+    image: {
+      dir: '~/assets/images'
+    }
+  }
 };

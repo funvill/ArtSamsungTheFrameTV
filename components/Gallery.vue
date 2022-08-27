@@ -1,9 +1,9 @@
 <template>
-  <div class='art'>
+  <div class="art">
     <div class="gallery">
       <div class="photo" v-for="item of value" :key="item.slug">
         <NuxtLink :to="{ name: 'art-slug', params: { slug: item.slug } }">
-          <img :src="require(`~/assets/images/${item.img}`)" :alt="item.alt" />
+          <nuxt-img :src="`images/${item.img}`" :alt="item.title" />
         </NuxtLink>
         <div class="desc">
           <strong>{{ item.title }}</strong>
@@ -17,13 +17,13 @@
 <style scoped>
 .gallery {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 960px;
 }
 .art div.photo {
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
-  width: 250px;
+  width: 310px;
   border-radius: 8px;
 }
 

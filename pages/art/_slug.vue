@@ -39,19 +39,11 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const art = await $content("arts", params.slug).fetch();
-
-    const [prev, next] = await $content("arts")
-      .only(["title", "slug"])
-      .sortBy("createdAt", "asc")
-      .surround(params.slug)
-      .fetch();
-
+  async asyncData({ params }) {
     return {
-      art,
-      prev,
-      next,
+      art: require("../../assets/data.json").filter(function (row) {
+        return row.slug == params.slug;
+      })[0],
     };
   },
 };

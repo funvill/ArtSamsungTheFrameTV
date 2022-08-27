@@ -6,17 +6,10 @@
 </template>
 
 <script>
-import Gallery from "../../components/Gallery.vue";
 export default {
-  components: { Gallery },  
-  async asyncData({ $content, params }) {
-    const results = await $content("arts")
-      .sortBy("createdAt", "asc")
-      .only(["title", "slug", "tags", "img"])
-      .fetch();
+  data() {
     return {
-      results,
-      slug: params.slug,
+      results: require("../../assets/data.json"),
     };
   },
 };

@@ -10,10 +10,8 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const allTags = await $content("arts")
-      .only(["tags"])
-      .sortBy("createdAt", "asc")
-      .fetch();
+
+    const allTags = require("../../assets/data.json"); 
 
     let allTagsAsArray = [];
     allTags.forEach((artPage) => {
