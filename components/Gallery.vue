@@ -3,7 +3,7 @@
     <div class="gallery">
       <div class="photo" v-for="item of value" :key="item.slug">
         <NuxtLink :to="{ name: 'art-slug', params: { slug: item.slug } }">
-          <nuxt-img :src="`images/${item.img}`" :alt="item.title" />
+          <nuxt-img :src="item.img" :alt="item.title" preset="thumbnail"/>
         </NuxtLink>
         <div class="desc">
           <strong>{{ item.title }}</strong>
@@ -24,6 +24,7 @@
   border: 1px solid #ccc;
   float: left;
   width: 310px;
+  height: 250px;
   border-radius: 8px;
 }
 
@@ -40,7 +41,6 @@
 .art div.desc {
   padding: 5px;
   text-align: center;
-  height: 80px;
   overflow: hidden;
   text-overflow: ellipsis " [..]";
 }

@@ -3,21 +3,21 @@
     <h1>{{ art.title }}</h1>
     <tags :tags="art.tags" />
     <div class="actions">
-      <a :href="require(`~/assets/images/${art.img}`)" download
-        ><div class="btn btn-primary">Download 💾</div></a
-      >
+      <a :href="art.img" download>
+        <div class="btn btn-primary">Download 💾</div>
+      </a>
     </div>
-    <a :href="require(`~/assets/images/${art.img}`)" download
-      ><img :src="require(`~/assets/images/${art.img}`)" :alt="art.alt"
-    /></a>
+    <a :href="art.img" download>
+      <nuxt-img :src="art.img" :alt="art.title" preset="slug" />
+    </a>
 
-    <strong>Resolution:</strong>
+    <strong>📺 Resolution:</strong>
     <NuxtLink
       to="/about#why-are-the-images-all-the-resolution-of-38402160-169-ish"
-      >3840×2160</NuxtLink
-    >, <strong>Mid Journey prompt:</strong> {{ art.prompt }} <br />
+      >3840x2160</NuxtLink
+    >, <strong>📃 Mid Journey prompt :</strong> {{ art.prompt }} <br />
     <NuxtLink to="/about#how-to-load-artwork-onto-the-samsung-the-frame-tv"
-      >How to load artwork onto the Samsung 'The Frame' TV</NuxtLink
+      >❓ How to load artwork onto the Samsung 'The Frame' TV</NuxtLink
     >
   </article>
 </template>
@@ -40,10 +40,27 @@
 <script>
 export default {
   async asyncData({ params }) {
+    let art = require("../../assets/data.json").filter(function (row) {
+      return row.slug == params.slug;
+    });
+
+    if (art == undefined || art.lenght == 0) {
+      art = [
+        {
+          title: "Error can not find",
+          tags: "Error can not find",
+          img: "Error can not find",
+          prompt: "Error can not find",
+        },
+      ];
+      // middleware({ redirect }) {
+      //   return redirect('/art');
+      // }
+    }
+
+    // Get the first and probably only result
     return {
-      art: require("../../assets/data.json").filter(function (row) {
-        return row.slug == params.slug;
-      })[0],
+      art: art[0],
     };
   },
 };
