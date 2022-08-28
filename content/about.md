@@ -1,6 +1,6 @@
 # About
 
-You can read more about this project in a blog post [Samsung 'The Frame' TV custom art](#)
+You can read more about this project in a blog post [Samsung 'The Frame' TV custom art](https://blog.abluestar.com/samsung-the-frame-tv-art/)
 
 ## FAQ
 
